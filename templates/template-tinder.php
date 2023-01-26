@@ -5,36 +5,37 @@
  * Template Post Type: page
  *
  */
+get_header();
+nectar_page_header($post->ID);
+$nectar_fp_options = nectar_get_full_page_options();
+
 ?>
 
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<div class="container-wrap">
+  <div class="<?php if ($nectar_fp_options['page_full_screen_rows'] !== 'on') {
+                echo 'container';
+              } ?> main-content" role="main">
+    <div class="row">
+      <?php
 
-<head>
-  <title><?php wp_title(''); ?></title>
+      nectar_hook_before_content();
 
-  <meta charset="<?php bloginfo('charset'); ?>">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="IE=edge">
-  <meta name="facebook-domain-verification" content="qoktkpag3a4h43w7r8dwii2gtzukfh" />
-  <link rel="profile" href="http://gmpg.org/xfn/11">
+      if (have_posts()) :
+        while (have_posts()) :
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#81bb26">
-  <meta name="theme-color" content="#ffffff">
+          the_post();
+          the_content();
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <?php wp_head(); ?>
+        endwhile;
+      endif;
 
-</head>
+      nectar_hook_after_content();
 
-<body <?php body_class(); ?>>
+      ?>
+    </div>
+  </div>
 
-  <section class="cat-tinder-grid-container">
+  <div class="cat-tinder-grid-container">
     <div class="container mx-auto px-4 xl:px-6">
       <?php
       $args = array(
@@ -87,7 +88,7 @@
       wp_reset_postdata();
       ?>
     </div>
-  </section>
+  </div>
 
   <div class="cat-tinder-modal">
     <div class="cat-tinder-swiper swiper">
@@ -247,14 +248,43 @@
         </div>
         <div class="flex gap-x-1">
           <button type="button" class="text-lg py-3 px-6 rounded-full text-slate-600 hover:text-brand-orange hover:underline transition">Email My Wishlist</button>
-          <button type="button" class="text-lg py-3 px-6 rounded-full bg-brand-orange hover:brightness-110 text-white shadow-md hover:shadow-lg transition">Book Meet and Greet</button>
+          <a href="/the-cat-protection-society-adoption-application-form/" class="text-lg py-3 px-6 rounded-full bg-brand-orange hover:brightness-110 text-white shadow-md hover:shadow-lg transition">Book Meet and Greet</a>
         </div>
       </div>
     </div>
   </div>
 
-  <?php wp_footer(); ?>
+</div><!--/container-wrap-->
 
+<?php
+
+nectar_hook_before_outer_wrap_close();
+
+get_template_part('includes/partials/footer/off-canvas-navigation');
+
+?>
+
+</div> <!--/ajax-content-wrap-->
+
+<?php
+if (
+  !empty($nectar_options['boxed_layout']) &&
+  $nectar_options['boxed_layout'] === '1' &&
+  $header_format !== 'left-header'
+) {
+  echo '</div><!--/boxed closing div-->';
+}
+
+get_template_part('includes/partials/footer/back-to-top');
+
+get_template_part('includes/partials/footer/body-border');
+
+
+nectar_hook_after_wp_footer();
+nectar_hook_before_body_close();
+
+wp_footer();
+?>
 </body>
 
 </html>

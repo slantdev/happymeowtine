@@ -82,3 +82,15 @@ function load_cat()
 }
 add_action('wp_ajax_load_cat', 'load_cat');
 add_action('wp_ajax_nopriv_load_cat', 'load_cat');
+
+add_filter('frm_address_sub_fields', 'remove_line2_from_address_field', 10, 2);
+function remove_line2_from_address_field($sub_fields, $field)
+{
+  $target_field_id = 32; // change this.
+  if ($target_field_id !== (int) $field['id']) {
+    return $sub_fields;
+  }
+
+  unset($sub_fields['line2']);
+  return $sub_fields;
+}

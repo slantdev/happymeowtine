@@ -232,5 +232,15 @@ jQuery(function ($) {
     $('#wishlist-count').text('0 cat');
   }
 
+  // Formidable Forms
+  if (Object.keys(cats).length > 0) {
+    let cat_names = '';
+    $.each(cats, function (key, value) {
+      //console.log(key + ': ' + value['name']);
+      cat_names += value['name'] + ' (ID: ' + value['cat_id'] + ')' + '\r\n';
+    });
+    $('#field_cats_names').val(cat_names);
+  }
+
   //element = $('a[data-item-id="stand-out"]');
 });

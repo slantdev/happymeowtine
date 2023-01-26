@@ -132,3 +132,49 @@ body.overflow-hidden {
     background: none;
   }
 }
+
+.frm_forms.with_frm_style {
+  @apply text-base leading-normal;
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='tel'],
+  input[type='url'],
+  input[type='search'],
+  input[type='date'],
+  input[type='number'],
+  textarea,
+  select {
+    @apply text-base leading-snug;
+  }
+  label {
+    @apply !text-base !leading-normal !font-bold;
+  }
+  .frm_description {
+    @apply !leading-normal;
+  }
+  .frm_submit .frm_button_submit {
+    @apply !py-2 !px-6;
+  }
+  .frm_section_heading h3 {
+    @apply leading-tight;
+  }
+}
+
+#frm_checkbox_44-0 {
+  label {
+    padding-left: 28px;
+    text-indent: -28px;
+    @apply !font-normal;
+  }
+}
+
+body[data-form-submit='regular']
+  .container-wrap
+  .frm_submit
+  button[type='submit'] {
+  @apply !py-4 !px-6 text-lg leading-tight;
+  &:hover {
+    @apply !bg-brand-orange brightness-110;
+  }
+}
