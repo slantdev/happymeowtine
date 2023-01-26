@@ -1,0 +1,207 @@
+{
+    "key": "group_63cec1c9836a2",
+    "title": "Cats Tinder",
+    "fields": [
+        {
+            "key": "field_63cec2d553345",
+            "label": "ID",
+            "name": "cat_tinder_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_63cec34853347",
+            "label": "Microchip",
+            "name": "cat_tinder_microchip",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_63cec28253344",
+            "label": "Age",
+            "name": "cat_tinder_age",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1 we": "1 Week",
+                "2 we": "2 Weeks",
+                "3 we": "3 Weeks",
+                "1 mo": "1 Month",
+                "2 mo": "2 Months",
+                "3 mo": "3 Months",
+                "4 mo": "4 Months",
+                "5 mo": "5 Months",
+                "6 mo": "6 Months",
+                "7 mo": "7 Months",
+                "8 mo": "8 Months",
+                "9 mo": "9 Months",
+                "10 mo": "10 Months",
+                "11 mo": "11 Months",
+                "1 yr": "1 Year",
+                "2 yr": "2 Years",
+                "3 yr": "3 Years",
+                "4 yr": "4 Years",
+                "5 yr": "5 Years",
+                "6 yr": "6 Years",
+                "7 yr": "7 Years",
+                "8 yr": "8 Years",
+                "9 yr": "9 Years",
+                "10 yr": "10 Years",
+                "11 yr": "11 Years",
+                "12 yr": "12 Years",
+                "13 yr": "13 Years",
+                "14 yr": "14 Years",
+                "15 yr": "15 Years",
+                "16 yr": "16 Years",
+                "17 yr": "17 Years",
+                "18 yr": "18 Years",
+                "19 yr": "19 Years",
+                "20 yr": "20 Years"
+            },
+            "default_value": false,
+            "return_format": "array",
+            "multiple": 0,
+            "placeholder": "",
+            "allow_null": 1,
+            "ui": 0,
+            "ajax": 0,
+            "allow_custom": 0,
+            "search_placeholder": ""
+        },
+        {
+            "key": "field_63cec2ec53346",
+            "label": "Gender",
+            "name": "cat_tinder_gender",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "female": "Female",
+                "male": "Male"
+            },
+            "default_value": "",
+            "return_format": "label",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_63cec36153348",
+            "label": "Description",
+            "name": "cat_tinder_description",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_63cec1cb53343",
+            "label": "Images",
+            "name": "cat_tinder_images",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min": "",
+            "max": "",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "insert": "append",
+            "preview_size": "medium"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "cats_tinder"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_display_title": "Cat Detail",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1674629089
+}

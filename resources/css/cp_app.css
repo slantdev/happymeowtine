@@ -1,0 +1,134 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body.overflow-hidden {
+  @apply pr-[15px];
+}
+
+.cat-modal {
+  @apply pointer-events-none invisible fixed inset-0 opacity-0 z-50 bg-black/50 transition-all duration-200 overflow-y-hidden overscroll-contain;
+  /* @apply flex justify-center items-center; */
+  .modal-box {
+    max-height: calc(100vh - 5em);
+    @apply bg-white transition-all duration-200 w-full max-w-5xl scale-90 rounded-2xl shadow-lg overflow-y-auto overscroll-contain;
+  }
+  &.show {
+    @apply pointer-events-auto visible opacity-100;
+    .modal-box {
+      @apply translate-y-0 scale-100;
+    }
+  }
+}
+
+.cat-tinder-grid-container {
+  @apply py-20;
+}
+
+.cat-tinder-modal {
+  @apply pointer-events-none invisible fixed inset-0 opacity-0 z-10 bg-black/50 transition-all duration-200 overflow-y-hidden overscroll-contain;
+  &.show {
+    @apply pointer-events-auto visible opacity-100;
+  }
+}
+.cat-tinder-modal--btn-close {
+}
+.cat-tinder-swiper {
+  @apply h-full;
+  .swiper-wrapper {
+    /* @apply items-center; */
+    .swiper-slide {
+      /* @apply h-auto; */
+      @apply flex justify-center items-center;
+    }
+  }
+}
+
+.cat-tinder-info-table {
+  @apply border-l border-b border-white text-gray-700 text-sm;
+  th,
+  td {
+    @apply px-4 py-2;
+  }
+  tbody {
+    th {
+      @apply text-left font-bold bg-slate-100 border-t border-r border-solid border-white;
+    }
+    td {
+      @apply !bg-slate-200 !border-t !border-r !border-solid !border-white;
+    }
+  }
+}
+
+.cat-tinder-btn-love {
+  @apply inline-flex gap-x-2 px-8 py-3 rounded-full bg-white text-slate-500 border border-slate-200 shadow hover:shadow-lg transition items-center;
+  .path-heart {
+    @apply text-slate-500;
+  }
+  .path-paw {
+    @apply text-white;
+  }
+  &.selected {
+    @apply bg-red-500 text-white border-red-500;
+    .path-heart {
+      @apply text-white;
+    }
+    .path-paw {
+      @apply text-red-500;
+    }
+  }
+}
+.cat-tinder-grid-btn-love {
+  @apply inline-flex rounded-full bg-white items-center justify-center h-12 w-12;
+  .path-heart {
+    @apply text-slate-500;
+  }
+  .path-paw {
+    @apply text-white;
+  }
+  &.selected {
+    @apply bg-red-500 text-white border-red-500;
+    .path-heart {
+      @apply text-white;
+    }
+    .path-paw {
+      @apply text-red-500;
+    }
+  }
+}
+
+.cat-tinder-cta-bar {
+  @apply fixed bottom-0 left-0 right-0 bg-white w-full z-20 translate-y-full;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px -7px 29px 0px;
+}
+
+.prose {
+  p {
+    @apply pb-0;
+  }
+}
+
+.cat-tinder-grid-container,
+.cat-tinder-swiper,
+.cat-tinder-cta-bar {
+  @apply transition-all duration-300;
+}
+
+.has-cta-bar {
+  .cat-tinder-grid-container {
+    @apply pb-[180px];
+  }
+  .cat-tinder-swiper {
+    @apply -translate-y-[50px];
+  }
+  .cat-tinder-cta-bar {
+    @apply translate-y-0;
+  }
+}
+
+.swiper-3d {
+  .swiper-slide-shadow-left,
+  .swiper-slide-shadow-right {
+    background: none;
+  }
+}
