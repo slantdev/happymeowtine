@@ -6,8 +6,12 @@ body.overflow-hidden {
   @apply pr-[15px];
 }
 
+.container-wrap {
+  @apply z-auto;
+}
+
 .cat-modal {
-  @apply pointer-events-none invisible fixed inset-0 opacity-0 z-50 bg-black/50 transition-all duration-200 overflow-y-hidden overscroll-contain;
+  @apply pointer-events-none invisible fixed inset-0 opacity-0 z-[99998] bg-black/50 transition-all duration-200 overflow-y-hidden overscroll-contain;
   /* @apply flex justify-center items-center; */
   .modal-box {
     max-height: calc(100vh - 5em);
@@ -26,7 +30,7 @@ body.overflow-hidden {
 }
 
 .cat-tinder-modal {
-  @apply pointer-events-none invisible fixed inset-0 opacity-0 z-10 bg-black/50 transition-all duration-200 overflow-y-hidden overscroll-contain;
+  @apply pointer-events-none invisible fixed inset-0 opacity-0 z-[99998] bg-black/50 transition-all duration-200 overflow-y-hidden overscroll-contain;
   &.show {
     @apply pointer-events-auto visible opacity-100;
   }
@@ -98,7 +102,7 @@ body.overflow-hidden {
 }
 
 .cat-tinder-cta-bar {
-  @apply fixed bottom-0 left-0 right-0 bg-white w-full z-20 translate-y-full;
+  @apply fixed bottom-0 left-0 right-0 bg-white w-full z-[99999] translate-y-full;
   box-shadow: rgba(100, 100, 111, 0.2) 0px -7px 29px 0px;
 }
 

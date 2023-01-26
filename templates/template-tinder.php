@@ -248,7 +248,7 @@ $nectar_fp_options = nectar_get_full_page_options();
         </div>
         <div class="flex gap-x-1">
           <button type="button" class="text-lg py-3 px-6 rounded-full text-slate-600 hover:text-brand-orange hover:underline transition">Email My Wishlist</button>
-          <a href="/adoption-application-form/" class="text-lg py-3 px-6 rounded-full bg-brand-orange hover:brightness-110 text-white shadow-md hover:shadow-lg transition">Book Meet and Greet</a>
+          <a href="/adoption-application-form/" class="text-lg py-3 px-6 rounded-full bg-brand-orange hover:brightness-110 text-white shadow-md hover:shadow-lg hover:!text-white transition">Book Meet and Greet</a>
         </div>
       </div>
     </div>
