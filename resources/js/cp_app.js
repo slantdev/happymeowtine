@@ -220,6 +220,7 @@ jQuery(function ($) {
   $('.btn-email-wishlist').on('click', function (event) {
     event.preventDefault();
     $('body, html').addClass('overflow-hidden');
+    $('.cat-tinder-modal').removeClass('show');
     $('.cat-tinder-email-wishlist').addClass('show');
   });
   $('.cat-tinder-email-wishlist-btn-close').on('click', function (event) {
