@@ -247,11 +247,38 @@ $nectar_fp_options = nectar_get_full_page_options();
           <span id="wishlist-count" class="font-bold">0 cat</span> <span class="text-slate-500">in My Wishlist</span>
         </div>
         <div class="flex gap-x-1">
-          <button type="button" class="text-lg py-3 px-6 rounded-full text-slate-600 hover:text-brand-orange hover:underline transition">Email My Wishlist</button>
+          <button type="button" class="btn-email-wishlist text-lg py-3 px-6 rounded-full text-slate-600 hover:text-brand-orange hover:underline transition">Email My Wishlist</button>
           <a href="/adoption-application-form/" class="text-lg py-3 px-6 rounded-full bg-brand-orange hover:brightness-110 text-white shadow-md hover:shadow-lg hover:!text-white transition">Book Meet and Greet</a>
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="cat-tinder-email-wishlist">
+    <?php
+    $email_my_wishlist = get_field('email_my_wishlist');
+
+    if ($email_my_wishlist) {
+      echo '<div class="h-full">';
+      echo '<div class="flex justify-center items-center h-full">';
+      echo '<div class="w-full max-w-2xl mx-auto relative pt-10 px-6 pb-2 bg-white rounded-3xl">';
+      if ($email_my_wishlist['title']) {
+        echo '<h3 class="text-3xl mb-4">' . $email_my_wishlist['title'] . '</h3>';
+      }
+      if ($email_my_wishlist['description']) {
+        echo '<div class="prose mb-4">';
+        echo $email_my_wishlist['description'];
+        echo '</div>';
+      }
+      if ($email_my_wishlist['form_shortcode']) {
+        echo do_shortcode($email_my_wishlist['form_shortcode']);
+      }
+      echo '<button type="button" class="cat-tinder-email-wishlist-btn-close absolute top-3 right-3 z-10 font-mono rounded-full w-10 h-10 flex items-center justify-center text-white text-2xl leading-none bg-black cursor-pointer">&times;</button>';
+      echo '<div>';
+      echo '<div>';
+      echo '</div>';
+    }
+    ?>
   </div>
 
 </div><!--/container-wrap-->

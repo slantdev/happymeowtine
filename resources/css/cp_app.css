@@ -112,6 +112,13 @@ body.overflow-hidden {
   }
 }
 
+.cat-tinder-email-wishlist {
+  @apply pointer-events-none invisible fixed inset-0 opacity-0 z-[99999] bg-black/50 transition-all duration-200 overflow-y-hidden overscroll-contain;
+  &.show {
+    @apply pointer-events-auto visible opacity-100;
+  }
+}
+
 .cat-tinder-grid-container,
 .cat-tinder-swiper,
 .cat-tinder-cta-bar {
@@ -162,6 +169,9 @@ body.overflow-hidden {
   }
   .frm_section_heading h3 {
     @apply leading-tight;
+  }
+  .frm_message p {
+    @apply !pb-0 mb-0;
   }
 }
 

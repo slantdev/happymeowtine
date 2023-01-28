@@ -204,12 +204,30 @@ jQuery(function ($) {
             ? Object.keys(cats).length + ' cats'
             : '1 cat'
         );
+        let cat_names = '';
+        $.each(cats, function (key, value) {
+          cat_names +=
+            value['name'] + ' (ID: ' + value['cat_id'] + ')' + '\r\n';
+        });
+        $('#field_wishlist_cat_names').val(cat_names);
       } else {
         $('body').removeClass('has-cta-bar');
         $('#wishlist-count').text('0 cat');
       }
     }
   );
+
+  $('.btn-email-wishlist').on('click', function (event) {
+    event.preventDefault();
+    $('body, html').addClass('overflow-hidden');
+    $('.cat-tinder-email-wishlist').addClass('show');
+  });
+  $('.cat-tinder-email-wishlist-btn-close').on('click', function (event) {
+    event.preventDefault();
+    location.reload();
+    $('.cat-tinder-email-wishlist').removeClass('show');
+    $('body, html').removeClass('overflow-hidden');
+  });
 
   let cats = JSON.parse(localStorage.getItem('cats_object'));
   $.each(cats, function (key, value) {
@@ -240,6 +258,7 @@ jQuery(function ($) {
       cat_names += value['name'] + ' (ID: ' + value['cat_id'] + ')' + '\r\n';
     });
     $('#field_cats_names').val(cat_names);
+    $('#field_wishlist_cat_names').val(cat_names);
   }
 
   //element = $('a[data-item-id="stand-out"]');
