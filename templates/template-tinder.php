@@ -48,7 +48,7 @@ $nectar_fp_options = nectar_get_full_page_options();
       $the_query = new WP_Query($args);
       $index = 0;
       if ($the_query->have_posts()) {
-        echo '<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-6 2xl:gap-10">';
+        echo '<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 md:gap-6 lg:gap-4 xl:gap-6">';
         while ($the_query->have_posts()) {
           $the_query->the_post();
           $post_id = get_the_ID();
