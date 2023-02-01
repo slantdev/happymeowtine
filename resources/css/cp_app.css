@@ -6,6 +6,24 @@ body.overflow-hidden {
   @apply pr-[15px];
 }
 
+@media only screen and (max-width: 999px) {
+  body #top #logo img,
+  #header-outer[data-permanent-transparent='false'] #logo .dark-version {
+    @apply !h-16;
+  }
+  body .transparent #top #logo img {
+    @apply !h-16;
+  }
+  body .scrolled-down #top #logo img {
+    @apply !h-12;
+  }
+  body #header-outer {
+    &.scrolled-down {
+      @apply !py-2;
+    }
+  }
+}
+
 .container-wrap {
   @apply z-auto;
 }
@@ -26,7 +44,10 @@ body.overflow-hidden {
 }
 
 .cat-tinder-grid-container {
-  @apply pt-12 pb-20;
+  @apply pt-8 pb-10 lg:pt-12 lg:pb-20;
+  .container {
+    @apply max-w-none;
+  }
 }
 
 .cat-tinder-modal {
@@ -34,8 +55,9 @@ body.overflow-hidden {
   &.show {
     @apply pointer-events-auto visible opacity-100;
   }
-}
-.cat-tinder-modal--btn-close {
+  .container {
+    @apply max-w-none;
+  }
 }
 .cat-tinder-swiper {
   @apply h-full;
@@ -43,7 +65,7 @@ body.overflow-hidden {
     /* @apply items-center; */
     .swiper-slide {
       /* @apply h-auto; */
-      @apply flex justify-center items-center;
+      @apply flex justify-center items-start lg:items-center;
     }
   }
 }
@@ -104,6 +126,9 @@ body.overflow-hidden {
 .cat-tinder-cta-bar {
   @apply fixed bottom-0 left-0 right-0 bg-white w-full z-[99999] translate-y-full;
   box-shadow: rgba(100, 100, 111, 0.2) 0px -7px 29px 0px;
+  .container {
+    @apply max-w-none;
+  }
 }
 
 .prose {
@@ -127,13 +152,16 @@ body.overflow-hidden {
 
 .has-cta-bar {
   .cat-tinder-grid-container {
-    @apply pb-[180px];
+    @apply pb-[80px] md:pb-[180px];
   }
   .cat-tinder-swiper {
-    @apply -translate-y-[50px];
+    @apply lg:-translate-y-[50px];
   }
   .cat-tinder-cta-bar {
     @apply translate-y-0;
+  }
+  .slide-content {
+    @apply pb-[80px] md:pb-[180px] lg:pb-0;
   }
 }
 

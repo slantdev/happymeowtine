@@ -44,7 +44,7 @@ const swiper = new Swiper('.cat-tinder-swiper', {
   loop: true,
   slidesPerView: 1,
   centeredSlides: true,
-  effect: 'coverflow',
+  //effect: 'coverflow',
   speed: 500,
   // hashNavigation: {
   //   watchState: true,
@@ -52,6 +52,12 @@ const swiper = new Swiper('.cat-tinder-swiper', {
   navigation: {
     nextEl: '.cat-tinder-next',
     prevEl: '.cat-tinder-prev',
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    1024: {
+      spaceBetween: 30,
+    },
   },
 });
 
