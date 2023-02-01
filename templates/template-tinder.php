@@ -62,7 +62,7 @@ $nectar_fp_options = nectar_get_full_page_options();
           $index++;
       ?>
           <div class="relative block rounded-xl md:rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 lg:hover:scale-105">
-            <a href="#<?php echo $id ?>" data-index="<?php echo $index ?>" data-id="<?php echo $id ?>" class="cat-tinder-card relative">
+            <a href="#<?php echo $id ?>" data-index="<?php echo $index ?>" data-id="<?php echo $id ?>" class="cat-tinder-card block relative">
               <div class="aspect-w-1 aspect-h-1">
                 <img src="<?php echo $poster_image ?>" class="w-full h-full object-cover">
               </div>
