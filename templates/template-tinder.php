@@ -104,6 +104,7 @@ $nectar_fp_options = nectar_get_full_page_options();
         );
         $the_query = new WP_Query($args);
         if ($the_query->have_posts()) {
+          $index = 0;
           while ($the_query->have_posts()) {
             $the_query->the_post();
             $post_id = get_the_ID();
@@ -115,6 +116,7 @@ $nectar_fp_options = nectar_get_full_page_options();
             $age = get_field('cat_tinder_age');
             $gender = get_field('cat_tinder_gender');
             $description = get_field('cat_tinder_description');
+            $index++;
         ?>
             <div data-hash="<?php echo $id ?>" class="swiper-slide">
               <div class="w-full mx-auto bg-white overflow-y-auto relative h-screen lg:h-auto lg:min-h-[480px] lg:max-w-6xl lg:overflow-hidden lg:rounded-2xl">
