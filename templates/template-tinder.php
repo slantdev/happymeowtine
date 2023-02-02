@@ -121,7 +121,7 @@ $nectar_fp_options = nectar_get_full_page_options();
                 <div class="flex flex-col lg:flex-row w-full h-full">
                   <div class="lg:w-1/2">
                     <div class="cat-modal-image h-full w-full lg:rounded-l-2xl overflow-hidden bg-black">
-                      <div id="swiper-image-<?php echo $id ?>" class="swiper">
+                      <div id="swiper-image-<?php echo $index ?>" class="swiper">
                         <div class="swiper-wrapper items-center">
                           <?php foreach ($cat_gallery as $cat) { ?>
                             <div class="swiper-slide grow">
@@ -134,13 +134,13 @@ $nectar_fp_options = nectar_get_full_page_options();
                         <div class="swiper-pagination"></div>
                       </div>
                       <script>
-                        const swiper_<?php echo $id ?> = new Swiper('#swiper-image-<?php echo $id ?>', {
+                        const swiper_image_<?php echo $index ?> = new Swiper('#swiper-image-<?php echo $index ?>', {
                           loop: false,
                           watchOverflow: true,
                           slidesPerView: 1,
                           centeredSlides: true,
                           pagination: {
-                            el: '#swiper-image-<?php echo $id ?> .swiper-pagination',
+                            el: '#swiper-image-<?php echo $index ?> .swiper-pagination',
                             clickable: true,
                             type: "progressbar",
                           },
