@@ -120,15 +120,38 @@ $nectar_fp_options = nectar_get_full_page_options();
               <div class="w-full mx-auto bg-white overflow-y-auto relative h-screen lg:h-auto lg:min-h-[480px] lg:max-w-6xl lg:overflow-hidden lg:rounded-2xl">
                 <div class="flex flex-col lg:flex-row w-full h-full">
                   <div class="lg:w-1/2">
-                    <div class="cat-modal-image h-full w-full lg:rounded-l-2xl overflow-hidden">
-                      <div class="aspect-w-1 aspect-h-1 lg:aspect-none lg:w-full lg:h-full">
-                        <img src="<?php echo $poster_image ?>" class="cat-image !w-full !h-full object-cover" />
+                    <div class="cat-modal-image h-full w-full lg:rounded-l-2xl overflow-hidden bg-black">
+                      <div id="swiper-image-<?php echo $id ?>" class="swiper">
+                        <div class="swiper-wrapper items-center">
+                          <?php foreach ($cat_gallery as $cat) { ?>
+                            <div class="swiper-slide grow">
+                              <div class="aspect-w-1 aspect-h-1 w-full h-full lg:aspect-none lg:w-full lg:h-full relative">
+                                <img src="<?php echo $cat['url'] ?>" class="w-full h-full object-cover">
+                              </div>
+                            </div>
+                          <?php } ?>
+                        </div>
+                        <div class="swiper-pagination"></div>
                       </div>
+                      <script>
+                        const swiper_<?php echo $id ?> = new Swiper('#swiper-image-<?php echo $id ?>', {
+                          loop: false,
+                          watchOverflow: true,
+                          slidesPerView: 1,
+                          centeredSlides: true,
+                          pagination: {
+                            el: '#swiper-image-<?php echo $id ?> .swiper-pagination',
+                            clickable: true,
+                            type: "progressbar",
+                          },
+                        });
+                      </script>
+                      <!-- <img src="<?php echo $poster_image ?>" class="cat-image !w-full !h-full object-cover" /> -->
                     </div>
                   </div>
                   <div class="slide-content lg:w-1/2 flex flex-col">
                     <div class="pt-6 px-4 pb-4 xl:p-8 relative">
-                      <div class="absolute -top-7 right-4 lg:hidden">
+                      <div class="absolute -top-7 right-4 lg:hidden z-10">
                         <button type="button" data-id="<?php echo $post_id ?>" data-name="<?php echo $name ?>" data-catid="<?php echo $id ?>" data-microchip="<?php echo $microchip ?>" class="cat-tinder-grid-btn-love !h-14 !w-14 !shadow-md">
                           <svg class="w-7 h-auto -mb-1" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path class="path-heart" d="M10 18L8.55 16.7052C3.4 12.1243 0 9.09319 0 5.3951C0 2.36403 2.42 0 5.5 0C7.24 0 8.91 0.79455 10 2.04033C11.09 0.79455 12.76 0 14.5 0C17.58 0 20 2.36403 20 5.3951C20 9.09319 16.6 12.1243 11.45 16.7052L10 18Z" fill="currentColor" />

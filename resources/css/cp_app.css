@@ -172,6 +172,10 @@ body.overflow-hidden {
   }
 }
 
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  @apply bg-brand-orange bg-opacity-75;
+}
+
 .frm_forms.with_frm_style {
   @apply text-base leading-normal;
   input[type='text'],
